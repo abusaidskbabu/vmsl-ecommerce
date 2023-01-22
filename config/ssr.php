@@ -31,7 +31,7 @@ return [
      * Extra setup for the Node engine.
      */
     'node' => [
-        'node_path' => env('NODE_PATH', '/home/kholabazaar/nodevenv/nodejs/16/bin/node'),
+        'node_path' => env('NODE_PATH', '/home/techhutc/nodevenv/nodejs/12/bin/node'),
         // 'node_path' => env('NODE_PATH','D:\xampp\nodejs\node.exe'),
         'temp_path' => storage_path('app/ssr'),
     ],
