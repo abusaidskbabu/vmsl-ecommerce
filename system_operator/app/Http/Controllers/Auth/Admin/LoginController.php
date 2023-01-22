@@ -45,11 +45,11 @@ class LoginController extends Controller
 	{
 
 
-		if ($request->server('HTTP_HOST') == 'api.nurtaj.com' || $request->server('HTTP_HOST') == 'api.kholabazaar.techhut.com.bd') {
+		if ($request->server('HTTP_HOST') == 'ecommerce.api.techhut.com.bd' || $request->server('HTTP_HOST') == 'api.kholabazaar.techhut.com.bd') {
 			echo json_encode('Sorry please provide valid api url!');
-		} elseif ($request->server('HTTP_HOST') == 'seller.nurtaj.com' || $request->server('HTTP_HOST') == '127.0.0.1:8001' || $request->server('HTTP_HOST') == 'seller.kholabazaar.techhut.com.bd') {
+		} elseif ($request->server('HTTP_HOST') == 'ecommerce.seller.techhut.com.bd' || $request->server('HTTP_HOST') == '127.0.0.1:8001' || $request->server('HTTP_HOST') == 'seller.kholabazaar.techhut.com.bd') {
 			return view('auth.admin.login');
-		} elseif ($request->server('HTTP_HOST') == 'admin.nurtaj.com' || $request->server('HTTP_HOST') == '127.0.0.1:8000' || $request->server('HTTP_HOST') == 'admin.kholabazaar.techhut.com.bd') {
+		} elseif ($request->server('HTTP_HOST') == 'ecommerce.admin.techhut.com.bd' || $request->server('HTTP_HOST') == '127.0.0.1:8000' || $request->server('HTTP_HOST') == 'admin.kholabazaar.techhut.com.bd') {
 			return view('auth.admin.login');
 		} else {
 			echo json_encode('Sorry you are not allowed to access this url!');
@@ -62,7 +62,7 @@ class LoginController extends Controller
 	public function login(Request $request)
 	{
 
-		if ($request->server('HTTP_HOST') == 'seller.nurtaj.com' || $request->server('HTTP_HOST') == '127.0.0.1:8001' || $request->server('HTTP_HOST') == 'seller.kholabazaar.techhut.com.bd') {
+		if ($request->server('HTTP_HOST') == 'ecommerce.seller.techhut.com.bd' || $request->server('HTTP_HOST') == '127.0.0.1:8001' || $request->server('HTTP_HOST') == 'seller.kholabazaar.techhut.com.bd') {
 			$this->validate($request, [
 				'email' => 'required',
 				'password' => 'required'
@@ -106,7 +106,7 @@ class LoginController extends Controller
 				session()->flash('failed', 'Invalid Credentials!');
 				return back();
 			}
-		} elseif ($request->server('HTTP_HOST') == 'admin.nurtaj.com' || $request->server('HTTP_HOST') == 'admin.kholabazaar.techhut.com.bd' || $request->server('HTTP_HOST') == '127.0.0.1:8000') {
+		} elseif ($request->server('HTTP_HOST') == 'ecommerce.admin.techhut.com.bd' || $request->server('HTTP_HOST') == 'admin.kholabazaar.techhut.com.bd' || $request->server('HTTP_HOST') == '127.0.0.1:8000') {
 			$this->validate($request, [
 				'email' => 'required',
 				'password' => 'required'
